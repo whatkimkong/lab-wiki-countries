@@ -4,10 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// THIS IS WHAT I DID>>>
+import { BrowserRouter } from 'react-router-dom'; // after npm i react-router-dom
+import 'bootstrap/dist/css/bootstrap.css'; // after npm i bootstrap
+
+// and I changed Strict Mode to BrowserRouter instead!
 ReactDOM.render(
-  <React.StrictMode>
+  <BrowserRouter> 
     <App />
-  </React.StrictMode>,
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
