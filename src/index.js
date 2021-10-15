@@ -8,11 +8,13 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom'; // after npm i react-router-dom
 import 'bootstrap/dist/css/bootstrap.css'; // after npm i bootstrap
 
-// and I changed Strict Mode to BrowserRouter instead!
+// and I wrapped Strict Mode around BrowserRouter
 ReactDOM.render(
-  <BrowserRouter> 
-    <App />
-  </BrowserRouter>,
+  <React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>,
   document.getElementById('root')
 );
 
