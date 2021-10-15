@@ -5,6 +5,7 @@ import CountriesList from './components/CountriesList';
 import React from 'react';
 import { Switch } from 'react-router-dom';
 import { Route } from 'react-router-dom';
+// import CountryDetails from './components/CountryDetails';
 
 function App() {
   return (
@@ -15,10 +16,13 @@ function App() {
     
     <Switch>
         <Route />
+    
     </Switch>
     </div>
   );
 }
+//    <Route path={`/${cca3}`} component={CountryDetails} />
+
 
 export default App;
 
