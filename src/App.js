@@ -5,24 +5,32 @@ import CountriesList from './components/CountriesList';
 import React from 'react';
 import { Switch } from 'react-router-dom';
 import { Route } from 'react-router-dom';
-// import CountryDetails from './components/CountryDetails';
+import CountryDetails from './components/CountryDetails';
+
+const countriesList = {
+  backgroundColor: "lightBlue",
+}
 
 function App() {
   return (
     <div className="App">
-
-    <Navbar/>
-    <CountriesList/>
-    
-    <Switch>
-        <Route />
-    
-    </Switch>
+      <Navbar/>
+      <div className="container-fluid bg-light">
+        <div className="row">
+          <div className="col-4">
+            <CountriesList/>
+          </div>
+          <div className="col-8">
+            <Switch>
+                <Route exact path="/country/:cca3" component={CountryDetails} />
+            </Switch>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
-//    <Route path={`/${cca3}`} component={CountryDetails} />
-
+// the semi-colon points to whatever is with it (only within the /:bla/), it defines the params, creates the params from this path
 
 export default App;
 
