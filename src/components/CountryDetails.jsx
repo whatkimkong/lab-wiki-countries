@@ -33,8 +33,8 @@ export default class CountryDetails extends Component {
                 <td className="row">Borders</td>
                 <td className="row">
                     <ul>
-                    <li>
-                    </li>
+                    {filteredCountry.borders.map((border) => {
+                      return <li>{border}</li>})}
                     </ul>
                 </td>
               </tr>
