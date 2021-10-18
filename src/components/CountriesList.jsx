@@ -15,7 +15,7 @@ export default class CountriesList extends Component {
             {this.state.countriesList.map((eachCountry) => {
                 return (
                     <li className="list-group-item">
-                    <NavLink to={`/country/${eachCountry.cca3}`}>{eachCountry.name.common}</NavLink>
+                    <NavLink key={eachCountry} to={`/country/${eachCountry.cca3}`}>{eachCountry.name.common}</NavLink>
                     </li>
                 )
             })}

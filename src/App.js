@@ -2,33 +2,48 @@
 import './App.css';
 import Navbar from './components/Navbar';
 import CountriesList from './components/CountriesList';
-import React from 'react';
+import React, {Component} from 'react';
 import { Switch } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import CountryDetails from './components/CountryDetails';
+import Countries from './countries.json';
 
 const countriesList = {
   backgroundColor: "lightBlue",
 }
 
-function App() {
-  return (
-    <div className="App">
-      <Navbar/>
-      <div className="container-fluid bg-light">
-        <div className="row">
-          <div className="col-4">
-            <CountriesList/>
-          </div>
-          <div className="col-8">
-            <Switch>
-                <Route exact path="/country/:cca3" component={CountryDetails} />
-            </Switch>
+class App extends Component {
+
+  state = {
+    countries: Countries,
+  }
+
+  componentDidMount() {
+    console.log("it did mount")
+  }
+
+  render() {
+    const { countries } = this.state;
+    return (
+      <div className="App">
+        {!countries && <h2>This page is loading</h2>}
+        <Navbar/>
+        <div className="container-fluid bg-light">
+          <div className="row">
+            <div className="col-4">
+              <CountriesList/>
+            </div>
+            <div className="col-8">
+              <Switch>
+                  <Route exact path="/country/:cca3" component={CountryDetails} />
+              </Switch>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  );
+
+    );
+  }
 }
 // the semi-colon points to whatever is with it (only within the /:bla/), it defines the params, creates the params from this path
 

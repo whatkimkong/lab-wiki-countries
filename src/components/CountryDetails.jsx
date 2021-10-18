@@ -7,15 +7,15 @@ export default class CountryDetails extends Component {
 // how to use bootstrap styles??
 
     render() {
-        const { cca3 } = this.props.match.params; // how to target matchthings
-        // ONLY GET the one that has this exact cca3 - use filter!
+      const { cca3 } = this.props.match.params; // how to target matchthings
+      // ONLY GET the one that has this exact cca3 - use filter!
 
-        const filteredCountry = countries.find(eachCountry => eachCountry.cca3 === cca3)
-        return (
-          <div>
-            <h1>{cca3}</h1>
-            <table className="table table-striped">
-              <thead>
+      const filteredCountry = countries.find(eachCountry => eachCountry.cca3 === cca3)
+      return (
+        <div>
+          <h1>{cca3}</h1>
+          <table className="table table-striped">
+            <thead>
               <tr>
                 <th className="col">{filteredCountry.name.common}</th>
               </tr>
@@ -34,14 +34,14 @@ export default class CountryDetails extends Component {
                 <td className="row">
                     <ul>
                     {filteredCountry.borders.map((border) => {
-                      return <li>{border}</li>})}
+                      return <li key={border}>{border}</li>})}
                     </ul>
                 </td>
               </tr>
             </tbody>
           </table>
-          </div>
-        )
+        </div>
+      )
   
     }
 }
